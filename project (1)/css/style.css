@@ -1,0 +1,364 @@
+/*----Web Font----*/
+
+@font-face {
+  font-family : 'Abolition Regular';
+  src: url('../fonts/abolition-regular-webfont.eot');
+  src: url('../fonts/abolition-regular-webfont.eot?#iefix') format('embedded-opentype'), /* allow to display in older version of IE*/
+       url('../fonts/abolition-regular-webfont.woff') format('woff'),
+       url('../fonts/abolition-regular-webfont.ttf') format('truetype');
+
+/*
+ Embedded OpenType(eot): Internet Explorer 9 compatibility mode,
+ Web Open Font Format(woff): a newer font format developed by Mozilla, supported by all modern browsers, loads very fast(data is compressed)
+ TrueType Format(ttf): Safari, Android and IOS display
+  
+    EMBEDDING TOO MUCH FONT USING'SRS' CAN AFFECT PERFORMANCE, LONGER PERFORMANCE TIME, ONLY EMBED THE ONLY THE WEBSITE NEEDS
+ 
+  
+  */
+  
+}
+
+
+/* Base Styles -------------------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: #878787;
+  margin: 0;
+/*
+  font-weight: normal;
+  font-size: 1em;  = 16 defaultpx;
+  line-height: 1.5, calculate line height base on font size by 1.5 times font size
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+*/
+  font: normal 1em/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1 {  
+  font-size: 5.625rem; /* 90px/16px  */
+  color: rgba(255, 255, 255, 1);
+  text-transform: uppercase;
+  font-weight: normal;
+  line-height: 1.3;
+  text-shadow: 2px 1px 1px black;  /*1st=right(neg=left).  2nd=bottom(neg top)   3rd=blur radius. 4th=color value, defult is the text color*/
+  margin: 20px 0 200px;             
+}
+
+h2 {
+  font-size: 3.3125em; /* 53px/16px  */
+  font-weight: normal;
+  line-height: 1.1;
+  margin: 0 0 .5em; /* 0 0 26px */
+}
+
+
+h1,
+h2 {
+  font-family: 'Abolition Regular', "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h3 {
+  font-size: 1.25em; /* 20px/16px  */
+  color: #48525c;
+  line-height: 1.2;
+  margin-bottom: 1.7em; /* 34px */  /*em adjust to font size, fuild*/
+}
+
+img {
+  max-width: 100%;  /*responsive image, now no matter the browser size, it will always be 100% */
+  margin-bottom: 20px;
+  border-radius: 10%;
+}
+
+/*
+ol {
+  list-style-type: decimal-leading-zero; change the list bullet/number appearance
+
+}
+*/
+
+ul,
+ol {
+
+
+  margin: 30px 0; /*padding will only move the list item not the list markers, since by default, list markers appear outside of list items*/
+  
+}
+
+li {
+  margin-bottom: 10px;
+  
+  
+}
+
+/* Pseudo-classes ------------------ */
+
+a:link {
+  color: rgb(255, 169, 73);
+  text-decoration: none;
+}
+
+a:visited {
+  color: lightblue;
+}
+
+a:hover {
+  color: rgba(255, 169, 73, .4);
+}
+
+a:active {
+  color: lightcoral;
+}
+
+/* Main Styles --------------------- */
+
+.main-header {
+  
+  height: 850px;
+  padding-top: 170px; /*vertical spacing, not fluid, can use fix unit*/
+  /* in an HTML element, everything except the margin area is consider the background layer, and every element has a background layer that is transparent by default*/
+  /*
+  background-color: #ffa949;
+  background-image: url('../img/mountains.jpg');
+  background-size: cover;                  -% is relative to the width and height of the background area, 40% of the size of the background area
+  background-repeat: no-repeat;            - repeat = repeat image; repeat-x: repeat horizontally; repeat-y: repeat vertically; 
+  background-position: center;             - first keyword = horizontal position, then vertical position; if we specific one word, it will assume 2nd to be   
+                                              center or 50%
+  background-position: 20% 50%; 
+ */
+  background: linear-gradient(#ffa949, transparent 50%),
+              linear-gradient(0deg, #fff, transparent 90%),
+              #ffa949 url('../img/mountains.jpg') no-repeat center / cover;
+              
+  
+  /* Gradient: not a CSS color, it is an image
+    __type of gradient__(position of the grident, color1, color2 etc)
+  linear-gradient(from left to right by default)
+      --> to right, to-left, to top : position 
+      ---> using degree, 0deg, 45deg, define the direction: position 
+  radial-graident(around the circle, expanding outward)
+      --> circle at top right, circle at top bottom: position;
+  
+ colorstop: allow a color to appear at a specific location
+  - each colorstop has two value: color and position
+  
+  \----------\ 0% position(top-right)
+  \          \        
+  \__________\
+ 100% position(bottom-left)
+ 
+  transparency: added at the end, after the color
+  --- the bottom layer show through
+  ---- + percent, - decrease transparency of the image
+  
+  
+  */
+}
+
+.title {
+  color: white;
+  font-size: 1.625rem; /* 26px/16px */
+  letter-spacing: .065em;
+  font-weight: 200;
+  border-bottom: 2px solid;
+  padding-bottom: 5px;
+}
+
+.intro {
+  font-size: 1.25em; /* 20px/16px */
+  line-height: 1.6;  
+}
+
+.primary-content,
+.main-header,
+.main-footer {
+  text-align: center;
+}
+
+.primary-content {
+	padding-top: 25px;
+  padding-bottom: 95px;
+}
+
+.secondary-content {
+	padding-top: 80px;
+	padding-bottom: 70px;
+  border-bottom: 2px solid #dfe2e6;
+/*  overflow: auto;*/
+}
+
+.callout {
+  font-size: 1.25em;
+  border-bottom: 3px solid;
+  padding: 0 9px 3px;
+  margin-top: 20px;
+  display: inline-block; /* allow margin properties apply to inline element*/
+}
+
+.main-footer {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  border-bottom: 10px solid #ffa949;
+}
+
+.t-border {
+  border-top: 2px solid #dfe2e6;
+}
+
+/* Layout Styles ------------------ */
+
+.primary-content, 
+.secondary-content {
+  width: 75%;
+  margin: auto; /*automatically calculates the margin on both sides and set them to equal*/
+  padding-right: 50px;
+  padding-left: 50px;
+  /*when defining width/height for a content, it only applies to the element's content box. 
+  it will not be exactly the same width/height specify, this will cause some issues in designing, the defult addings in the padding/margin*/
+  max-width: 900px; /*prevent the width to be too wide*/
+   /*overrides how the default calulation of width and height*/
+}
+
+.wildlife {
+  color: white;
+/*  background-color: #434a52;*/
+  padding: 18% 24%; /*fluid, adjust to browser width*/
+  border-top: 10px solid #ffa949;
+  margin: 105px 0 60px;
+  box-shadow:  inset 0px 0px 40px 10px rgba(0,0,0,.8); 
+  /*box-shadow: 'inset' = has to be first, set the shadow inward ; first three px similar to box shadow, fourth px control the spread(neg=shrink)  */
+  background: #434a52 url('../img/bear.jpg') no-repeat center/cover;
+  
+/* Rounded Corner , any length unit or percentage;
+  border-top-left-radius: 50px ;
+  border-top-right-radius:10px;
+  border-bottom-right-radius: 50px;
+  border-bottom-left-radius: 10px;
+*/
+  border-radius: 70px 10px;
+  /*border-radius: top-left top-right bottom right bottom left
+    percentage: create some interesting shape; refers to the dimenstion of the element, e.g. 100%, takes up 100% of the corner
+  */
+}
+
+
+.arrow {
+  width: 50px; 
+  display:block;
+  margin: auto;
+ 
+}
+
+.arrow1 {
+  margin-top: -15px;
+}
+
+.img-design {
+  border: 3px solid orange;
+}
+
+/*--------Floated Columns------*/
+
+.resort,
+.tip {
+  width: 46%;    /*default float: div content stack on top of each other*/
+  
+}
+
+.resort {
+  float: right; 
+}
+
+
+.tip {
+  float:left;
+}
+
+
+
+
+
+/*--------float: clearfix---------- */
+ .group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*-------Media Queries------*/
+
+@media (max-width: 1024px) { /*if you don't define a media type @media all() will be define , (#) can be percentage value, other length unit */
+
+  .primary-content,
+  .secondary-content {
+    width: 90%;
+     
+  
+  }
+  
+ 
+
+
+}
+
+@media (max-width: 768px) {
+  .main-header {
+    max-height: 650px;
+    padding 50px 25px 0;
+  }
+ 
+  .title {
+    font-size: 1.3rem;
+    border: 1.5rem;
+  }
+
+  .wildlife {
+    padding: 10% 12%;
+    margin: 50px 0 20px;
+  }
+
+  h1 {
+    font-size: 5rem;
+    line-height: 1.1;
+  }
+
+
+.arrow {
+
+  margin-top: -50px;
+  display: none;
+
+}
+
+
+  .primary-content,
+  .secondary-content {
+    width: 100%;
+    padding: 20px;
+    border-top: none;
+
+  }
+
+  .resort,
+  .tip {
+    float: none;
+    width: 100%;
+  }
+
+.img-design {
+  border: none;
+}
+
+.main-footer {
+  padding: 20px 0;
+}
+
+
+  
+}
+
+
+
